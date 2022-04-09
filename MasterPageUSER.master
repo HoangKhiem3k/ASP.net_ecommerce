@@ -1,0 +1,72 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageUSER.master.cs" Inherits="MasterPageUSER" %>
+<%@ Import Namespace="System.Data" %>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            height: 172px;
+        }
+        .auto-style2 {
+            height: 172px;
+            text-align: left;
+            width: 148px;
+        }
+        .auto-style4 {
+            height: 172px;
+            width: 560px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <p>
+            <table border="1" style="width:100%;">
+                <caption>
+                </caption>
+                <tr>
+                    <td colspan="3">
+                        &nbsp;</td>
+                </tr>
+                <tr>
+                    <td colspan="3">Danh mục loại sách</td>
+                </tr>
+                <tr>
+                    <td class="auto-style2" style="vertical-align: top">
+                        
+                        <asp:Repeater ID="Repeater1" runat="server">
+                            
+                            <ItemTemplate>
+                                <a href="pageDANHSACHSANPHAM.aspx?IDDM=<%# Eval("MaLoai") %>"> <%# Eval("TenLoai") %></a>                               
+                                </BR>
+                            </ItemTemplate>
+
+                        </asp:Repeater>
+
+                       
+
+
+                    </td>
+                    <td class="auto-style4" style="vertical-align: top">
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        
+        </asp:ContentPlaceHolder>
+                    </td>
+                    <td class="auto-style1" style="vertical-align: top">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Thông tin đăng nhập<br />
+                        Tên đăng nhập:<input id="Text1" type="text" /><br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Mật khẩu:<input id="Text2" type="text" /><br />
+                        <input id="Checkbox1" type="checkbox" />Ghi nhớ mật khẩu<asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Đăng nhập" Width="93px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">&nbsp;</td>
+                </tr>
+            </table>
+        </p>
+    </form>
+</body>
+</html>
